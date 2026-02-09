@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Monitor</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">
+    🌱 <b>Smart Monitor</b>
+    <span class="status online">● Online</span>
+  </div>
+
+  <button class="mute-btn">🔇 เสียงปิด</button>
+</header>
+
+<nav class="menu">
+  <span class="active">Dashboard</span>
+  <span>สถิติ</span>
+  <span>ตั้งค่า</span>
+  <span>อุปกรณ์</span>
+</nav>
+
+<main class="container">
+
+  <div id="systemStatus" class="status-pill normal">
+    ● สถานะปกติ
+  </div>
+
+  <div class="cards">
+
+    <!-- Soil -->
+    <div class="card">
+      <h3>💧 ความชื้นในดิน</h3>
+      <div class="gauge">
+        <span id="soilValue">0</span>
+        <span class="unit">/ 1024</span>
+      </div>
+      <p class="sub">Threshold: <span id="soilThreshold">600</span></p>
+    </div>
+
+    <!-- PIR -->
+    <div class="card">
+      <h3>👁 ตรวจจับความเคลื่อนไหว</h3>
+      <div id="pirStatus" class="pir idle">
+        ไม่มีการเคลื่อนไหว
+      </div>
+    </div>
+
+  </div>
+
+  <div class="control-card">
+    <h3>🔊 ควบคุมเสียงแจ้งเตือน</h3>
+    <label class="switch">
+      <input type="checkbox" id="muteSwitch">
+      <span class="slider"></span>
+    </label>
+    <span id="muteText">Mute</span>
+  </div>
+
+</main>
+
+<!-- ❗ ต้องเป็น module -->
+<script type="module" src="app.js"></script>
+</body>
+</html>
